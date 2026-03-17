@@ -70,6 +70,7 @@ async function init() {
   });
 
   startNewGame();
+  showHelpModal();
 }
 
 function startNewGame() {
@@ -233,7 +234,7 @@ function showHelpModal() {
   const help = el('div', 'help-content');
 
   help.appendChild(el('p', null, 'ひらがなの単語を当てよう！'));
-  help.appendChild(el('p', null, '文字数はランダムで3〜5文字。推測回数は文字数＋2回です。'));
+  help.appendChild(el('p', null, '文字数はランダムで3〜5文字。推測回数は文字数＋4回です。'));
   help.appendChild(el('h3', null, 'タイルの色'));
 
   const examples = [
@@ -261,11 +262,6 @@ function showHelpModal() {
       help.appendChild(note);
     }
   }
-
-  help.appendChild(el('h3', null, '濁点・半濁点'));
-  help.appendChild(el('p', null,
-    'キーボード下の「゛」「゜」ボタンで、最後に入力した文字に濁点・半濁点を付けられます。'));
-
   content.appendChild(help);
   showModal(content);
 }

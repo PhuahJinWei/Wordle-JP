@@ -122,18 +122,9 @@ export class Grid {
     this.tiles.push(rowTiles);
   }
 
-  /** Compute tile size to fit in the available vertical space. */
+  /** Update the --word-length CSS variable (tile size is handled by CSS clamp). */
   _computeTileSize() {
-    const gap = 4;
-    const keyboardEl = document.getElementById('keyboard');
-    const keyboardH = keyboardEl ? keyboardEl.scrollHeight : 220;
-    const availableH = window.innerHeight - keyboardH - 30; // 30px for indicator/padding
-    const availableW = Math.min(window.innerWidth, 550) - 32; // match app-container max-width
-
-    const tileByH = Math.floor((availableH - (this.maxGuesses - 1) * gap) / this.maxGuesses);
-    const tileByW = Math.floor((availableW - (this.wordLength - 1) * gap) / this.wordLength);
-    const tileSize = Math.max(28, Math.min(tileByH, tileByW, 56));
-
-    document.documentElement.style.setProperty('--tile-size', tileSize + 'px');
+    // Tile size is set via CSS: clamp(40px, calc((100vw - 48px) / word-length), 56px)
+    // No JS override needed — keeps tiles consistent across all devices.
   }
 }

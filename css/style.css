@@ -17,7 +17,7 @@
   --color-key-bg: #818384;
   --color-key-text: #ffffff;
   --color-header-border: #3a3a3c;
-  --tile-size: min(calc((100vw - 50px) / var(--word-length, 5)), 52px);
+  --tile-size: clamp(40px, calc((100vw - 48px) / var(--word-length, 5)), 56px);
   --tile-gap: 4px;
   --key-height: 32px;
   --keyboard-gap: 8px; /* Adjust this value to change spacing between keyboard keys */
@@ -87,9 +87,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 4px 8px;
   transition: transform 0.25s ease;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main.grid-shifted {

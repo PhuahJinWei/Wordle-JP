@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Wordle JP</title>
+  <link rel="icon" type="image/png" href="./asset/html_icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <button id="btn-help" class="header-btn" aria-label="遊び方">?</button>
+    <button id="btn-stats" class="header-btn" aria-label="統計">📰</button>
+    <button id="btn-new-game" class="header-btn" aria-label="新しいゲーム">↻</button>
+
+    <main class="main">
+      <div id="word-length-indicator" class="length-indicator"></div>
+      <div id="game-grid" class="grid-container"></div>
+    </main>
+
+    <div id="keyboard" class="keyboard-container"></div>
+    <button id="btn-keyboard-toggle" class="keyboard-toggle" aria-label="キーボード">⌨</button>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-content" class="modal-content"></div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

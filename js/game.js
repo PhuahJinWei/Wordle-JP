@@ -18,7 +18,7 @@ export class Game {
   newGame() {
     const lengths = Object.keys(this.wordsByLength).map(Number);
     this.wordLength = lengths[Math.floor(Math.random() * lengths.length)];
-    this.maxGuesses = this.wordLength + 2;
+    this.maxGuesses = this.wordLength + 4;
 
     const candidates = this.wordsByLength[String(this.wordLength)]
       .filter(w => [...w].length === this.wordLength);
